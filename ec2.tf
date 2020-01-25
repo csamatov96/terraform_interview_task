@@ -21,8 +21,8 @@ resource "aws_instance" "web" {
     connection {
       host = self.public_ip
       type = "ssh"
-      user = var.user
-      private_key = file(var.ssh_key_location)
+      user = "centos"
+      private_key = "~/.ssh/id_rsa"
       }
       inline = [
         "sudo yum update -y",
