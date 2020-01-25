@@ -9,11 +9,11 @@ data "aws_ami" "centos" { #
 
 #show the AMI id 
 output "ami" { 
-    value = "${data.aws_ami.centos.id}" 
+    value = data.aws_ami.centos.id
 } 
 
 resource "aws_instance" "web" {
-    ami           = "${data.aws_ami.centos.id}"
+    ami           = data.aws_ami.centos.id
     instance_type = "t2.micro"
     key_name = aws_key_pair.key_resource.terraform
     security_groups = ["allow_http_https"]
