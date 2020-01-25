@@ -22,7 +22,7 @@ resource "aws_instance" "web" {
 
 
     tags = {
-        Name = "HelloWorld"
+        Name = "WEB_EC2"
     } 
 }
 
