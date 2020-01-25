@@ -17,6 +17,7 @@ resource "aws_instance" "web" {
     instance_type = "t2.micro"
     security_groups = ["allow_http_https"]
     user_data = file("userdata_file")
+    key_name = aws_key_pair.key_resource.terraform_workstation
 
 
 
