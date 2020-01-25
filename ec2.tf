@@ -17,6 +17,24 @@ resource "aws_instance" "web" {
     instance_type = "t2.micro"
     security_groups = ["allow_http_https"]
 
+    provisioner "remote-exec" {
+    connection {
+      host = self.public_ip
+      type = "ssh"
+      user = var.user
+      private_key = file(var.ssh_key_location)
+      }
+      inline = [
+        "sudo yum update -y",
+        "sudo yum install httpd -y",
+        "sudo service httpd start",
+        "sudo chkconfig httpd on",
+        "echo “HELLO WORLD” > /var/www/html/index.html",
+        "echo “HELLO WORLD from $(hostname -f)” > /var/www/html/index.html"
+        ]
+  }
+
+
     tags = {
         Name = "HelloWorld"
     } 
