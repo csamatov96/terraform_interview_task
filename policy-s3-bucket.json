@@ -4,12 +4,12 @@
       {
         "Effect": "Allow",
         "Action": ["s3:ListBucket"],
-        "Resource": ["arn:aws:s3:::<bucketname>"]
+        "Resource": ["arn:aws:s3:::buckewtdf"]
       },
       {
         "Effect": "Allow",
         "Action": ["s3:GetObject"],
-        "Resource": ["arn:aws:s3:::<bucketname>/*"]
+        "Resource": ["arn:aws:s3:::buckewtdf/*"]
       }
     ]
   }
