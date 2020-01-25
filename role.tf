@@ -1,4 +1,4 @@
-resource “aws_iam_role” “s3role” { 
+resource "aws_iam_role" "s3role" { 
 name = “s3role” 
 assume_role_policy = <<EOF
 {
