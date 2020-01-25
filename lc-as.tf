@@ -3,7 +3,7 @@ resource "aws_launch_template" "example" {
   image_id      = "${data.aws_ami.centos.id}"
   instance_type = "t2.micro"
   #security_groups = ["allow_http_https"]
-  user_data = file("userdata_file.sh")
+  #user_data = file("userdata_file.sh")
 }
 
 resource "aws_autoscaling_group" "example" {
