@@ -1,7 +1,6 @@
-#!/bin/bash
-yum update -y,
+#! /bin/bash
 sudo yum install httpd -y,
 sudo service httpd start,
 sudo chkconfig httpd on,
-sudo echo "HELLO WORLD" > /var/www/html/index.html,
-sudo echo "HELLO WORLD from $(hostname -f)" > /var/www/html/index.html
+echo "HELLO WORLD" > /var/www/html/index.html,
+echo "HELLO WORLD from $(hostname -f)" > /var/www/html/index.html
