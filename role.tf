@@ -8,13 +8,13 @@ assume_role_policy = <<EOF
             "Sid": "ListObjectsInBucket",
             "Effect": "Allow",
             "Action": ["s3:ListBucket"],
-            "Resource": ["arn:aws:s3:::bucket-name"]
+            "Resource": ["arn:aws:s3:::buckewtdf"]
         },
         {
             "Sid": "AllObjectActions",
             "Effect": "Allow",
             "Action": "s3:*Object",
-            "Resource": ["arn:aws:s3:::bucket-name/*"]
+            "Resource": ["arn:aws:s3:::buckewtdf/*"]
         }
     ]
 }
