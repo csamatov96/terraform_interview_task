@@ -16,7 +16,7 @@ resource "aws_instance" "web" {
     ami           = "${data.aws_ami.centos.id}"
     instance_type = "t2.micro"
     security_groups = ["allow_http_https"]
-    user_data = file("userdata_file.sh")
+    user_data = file("userdata_file")
 
 
 
