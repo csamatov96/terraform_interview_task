@@ -19,22 +19,19 @@ EOF
 }
 
 resource "aws_iam_policy" "policy" {
-    name        = "test-policy"
-    description = "A test policy"
+  name        = "test-policy"
+  description = "A test policy"
 
-    policy = <<EOF
+  policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
     {
       "Action": [
-        "s3:PutAnalyticsConfiguration",
-        "Resource": "arn:aws:s3:::buckewtdf"
-
-        "Effect": "Allow",
-        "Action": [
-        "s3:GetAccessPoint",
-        "Resource": "arn:aws:s3:::buckewtdf"
+        "ec2:Describe*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
     }
   ]
 }
