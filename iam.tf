@@ -19,10 +19,10 @@ EOF
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = "test-policy"
-  description = "A test policy"
+    name        = "test-policy"
+    description = "A test policy"
 
-  policy = <<EOF
+    policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -96,7 +96,7 @@ resource "aws_iam_policy" "policy" {
                 "s3:GetObjectVersion",
                 "s3:ReplicateDelete"
             ],
-            "Resource": "arn:aws:s3:::buckewtdf"
+        "Resource": "arn:aws:s3:::buckewtdf"
 
       "Effect": "Allow",
       "Action": [
