@@ -1,4 +1,4 @@
-data "aws_ami" "CentOS Linux 6" { #
+data "aws_ami" "CentOS" { #
     filter { 
         name = "root-device-type" 
         values = ["ebs"] #instance_store  
