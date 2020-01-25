@@ -17,8 +17,7 @@ resource "aws_instance" "web" {
     instance_type = "t2.micro"
     security_groups = ["allow_http_https"]
     user_data = file("userdata_file")
-    key_name   = "terraform"
-    public_key = "${file("terraform.pub")}"
+    key_name = "${file("terraform.pub")}"
 
 
 
