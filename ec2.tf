@@ -16,23 +16,8 @@ resource "aws_instance" "web" {
     ami           = "${data.aws_ami.centos.id}"
     instance_type = "t2.micro"
     security_groups = ["allow_http_https"]
+    user_data = file("userdata_file")
 
-    provisioner "remote-exec" {
-    connection {
-      host = self.public_ip
-      type = "ssh"
-      user = "centos"
-      private_key = "~/.ssh/id_rsa"
-      }
-      inline = [
-        "sudo yum update -y",
-        "sudo yum install httpd -y",
-        "sudo service httpd start",
-        "sudo chkconfig httpd on",
-        "echo “HELLO WORLD” > /var/www/html/index.html",
-        "echo “HELLO WORLD from $(hostname -f)” > /var/www/html/index.html"
-        ]
-  }
 
 
     tags = {
