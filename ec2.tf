@@ -4,7 +4,7 @@ data "aws_ami" "centos" { #
         values = ["ebs"] #instance_store  
         } 
     most_recent = true 
-    owners = ["679593333241"] 
+    owners = ["556116077166"] 
 } 
 
 #show the AMI id 
@@ -15,6 +15,7 @@ output "ami" {
 resource "aws_instance" "web" {
     ami           = "${data.aws_ami.centos.id}"
     instance_type = "t2.micro"
+    security_groups = ["allow_http_https"]
 
     tags = {
         Name = "HelloWorld"
